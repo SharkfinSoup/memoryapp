@@ -1,6 +1,11 @@
 class GamesController < ApplicationController
   # get 'cards' for memory game
   def memory
+
+
+
+
+
     # get json feed, store in hash
     result = Hashie::Mash.new HTTParty.get("http://api.ravelry.com/projects/akaemi/progress.json?status=finished&key=0e3904e749b478766294964e01322c78b53ef411")
     
