@@ -1,7 +1,7 @@
 Memoryapp::Application.routes.draw do
   get "games/memory"
   get "games/projectDetails"
-
+  root to: 'games#memory'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
