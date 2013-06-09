@@ -4,6 +4,7 @@
 
 	<script type="text/javascript">
 	var pics = <%=@pictures.to_json.html_safe%>;
+	<!--document.write(pics) -->  <!-- here i am messing aorund again jliu-->
 	function flipCard(element) {
 		games.setPics(pics);
 		games.flipCard(element);

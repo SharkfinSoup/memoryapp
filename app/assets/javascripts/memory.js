@@ -38,7 +38,7 @@ var games = function() {
     
     if (matched) {
       element.matched = true;
-      element.style.backgroundImage = 'url("/assets/other.jpg")';
+      element.style.backgroundImage = 'url("assets/other.png")';
     } else if (selected) {
       element.selected = true;
       var pic = pics[element.id];

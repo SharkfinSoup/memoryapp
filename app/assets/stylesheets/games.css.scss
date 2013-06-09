@@ -12,8 +12,8 @@ html {
 
 #board {
   float : left; 
-  width: 340px; 
-  height: 300px;
+  width: 420px; 
+  height: 380px;
   margin: 0px auto;
 }
 
@@ -27,8 +27,8 @@ html {
   border: 1px solid black;
   margin: 3px; 
   float: left; 
-  width: 75px; 
-  height: 75px; 
+  width: 100px; 
+  height: 100px; 
   font-size: 4em; 
   text-align: center; 
   background-image: url("/assets/card-back.png"); 
@@ -36,7 +36,7 @@ html {
 }
 
 #matches {
-  float: left; 
+  float: right; 
   width: 500px; 
   height: 300px;
   margin: 0px auto;

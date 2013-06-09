@@ -3,19 +3,23 @@ class GamesController < ApplicationController
   def memory
 
 
+    #reading all files from the images directory and rejecting the 
+    #hidden . and .. folders.
+
+    result2=Dir.entries("app/assets/images/pictxt").reject{
+        |entry| entry == "." || entry == ".."
+    }
+
+    result2.shuffle!
 
 
-
-    # get json feed, store in hash
-    result = Hashie::Mash.new HTTParty.get("http://api.ravelry.com/projects/akaemi/progress.json?status=finished&key=0e3904e749b478766294964e01322c78b53ef411")
-    
     # grab pictures, store in array
     thumbnails = Array.new
     index = 0;
 
-    result["projects"].each{|key, value| 
-      thumbnail = key["thumbnail"]
-      thumbnails[index] = thumbnail["src"]
+    #for now, hack on a pictxt subfolder in front of each name
+    result2.each{|name| 
+      thumbnails[index] = "assets/pictxt/#{name}"
       index += 1
     }
     
