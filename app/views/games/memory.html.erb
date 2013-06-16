@@ -4,6 +4,7 @@
 
 	<script type="text/javascript">
 	var pics = <%=@pictures.to_json.html_safe%>;
+
 	<!--document.write(pics) -->  <!-- here i am messing aorund again jliu-->
 	function flipCard(element) {
 		games.setPics(pics);
@@ -16,6 +17,8 @@
 
 <div id="memory">
 	<h1>Test Your Memory</h1>
+	<h1><%= ENV['S3_KEY'] %> </h1>
+	
 
 	<div id="board">
 		<p><b>Match the cards!</b></p>
