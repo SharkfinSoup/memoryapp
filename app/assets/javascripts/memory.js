@@ -38,7 +38,7 @@ var games = function() {
     
     if (matched) {
       element.matched = true;
-      element.style.backgroundImage = 'url("assets/other.png")';
+      element.style.backgroundImage = 'url("assets/hydra.png")';
     } else if (selected) {
       element.selected = true;
       var pic = pics[element.id];
@@ -61,12 +61,13 @@ var games = function() {
     
     if (matched) {
 	    // ajax call
-	    $.getJSON("/games/projectDetails.json?url=" + backgroundImage,
+	  /*
+      $.getJSON("/games/projectDetails.json?url=" + backgroundImage,
 	        function(data){
 	          var img = "<img align='center' src='" + data.thumbnail.src + "'/>";
 	          $("#matches").append("<div class='match'>" + data.name + "<br/>" + img + "</div>");
 	        });
-	        
+	  */      
 	 	// update counter
 	 	addMatch();
      }

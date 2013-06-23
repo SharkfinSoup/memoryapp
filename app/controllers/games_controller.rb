@@ -3,12 +3,18 @@ class GamesController < ApplicationController
   def memory
 
 
+    #set variables
+    bucket_name='booksing-test'  #bucket name where jpgs are stored
+    result2=Array.new  #array to hold the s3 urls
+    result2=Marshal.load File.read('./config/s3files.txt')
+
+
     #reading all files from the images directory and rejecting the 
     #hidden . and .. folders.
 
-    result2=Dir.entries("app/assets/images/pictxt").reject{
-        |entry| entry == "." || entry == ".."
-    }
+    #result2=Dir.entries("app/assets/images/pictxt").reject{
+    #    |entry| entry == "." || entry == ".."
+    #}
 
     result2.shuffle!
 
@@ -16,13 +22,16 @@ class GamesController < ApplicationController
     # grab pictures, store in array
     thumbnails = Array.new
     index = 0;
+    thumbnails=result2
+
 
     #for now, hack on a pictxt subfolder in front of each name
-    result2.each{|name| 
-      thumbnails[index] = "assets/pictxt/#{name}"
-      index += 1
-    }
+    #result2.each{|name| 
+    #  thumbnails[index] = "assets/pictxt/#{name}"
+    #  index += 1
+    #}
     
+
     # create 2d Array to store pics, ids
     size = 12
     @pictures = Array.new 

@@ -7,6 +7,10 @@
 # Ignore bundler config
 /.bundle
 
+# ignore s3 files
+/config/aws.yml
+
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
