@@ -1,7 +1,9 @@
+
+
     bucket_name='booksing-test'  #bucket name where jpgs are stored
     result2=Array.new  #array to hold the s3 urls
 
-    s3=AWS::S3.new  #create the s3 object
+    s3=AWS::S3.new  #login needed for s3, access id and secret access key
 
     bucket=s3.buckets[bucket_name]
     bucket.objects.each do |o|

@@ -4,9 +4,9 @@ class GamesController < ApplicationController
 
 
     #set variables
-    bucket_name='booksing-test'  #bucket name where jpgs are stored
-    result2=Array.new  #array to hold the s3 urls
-    result2=Marshal.load File.read('./config/s3files.txt')
+    #bucket_name='booksing-test'  #bucket name where jpgs are stored
+    thumbnails=Array.new  #array to hold the s3 urls
+    thumbnails=Marshal.load File.read('./config/s3files.txt')
 
 
     #reading all files from the images directory and rejecting the 
@@ -16,13 +16,13 @@ class GamesController < ApplicationController
     #    |entry| entry == "." || entry == ".."
     #}
 
-    result2.shuffle!
+    thumbnails.shuffle!
 
 
     # grab pictures, store in array
-    thumbnails = Array.new
-    index = 0;
-    thumbnails=result2
+    # thumbnails = Array.new
+    # index = 0;
+    # thumbnails=result2
 
 
     #for now, hack on a pictxt subfolder in front of each name
